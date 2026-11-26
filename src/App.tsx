@@ -34,6 +34,7 @@ export default function App() {
   return (
     <main>
       <Person person={people[index]} />
+      <button disabled={index === 0} onClick={() => setIndex(index - 1)}>Previous</button>
       <button disabled={index === people.length - 1} onClick={() => setIndex(index + 1)}>Next</button>
     </main>
   )
