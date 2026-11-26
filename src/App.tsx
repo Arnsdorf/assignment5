@@ -5,7 +5,7 @@ import Person from './Person'
 const QUERY = 'spielberg'
 
 export default function App() {
-  const search = useRef<ReturnType<typeof searchPeople> | null>(null)
+  const search = useRef<ReturnType<typeof searchPeople> | null>(null) // gemmer kaldet
   const [people, setPeople] = useState<PersonSearchResult[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
@@ -13,8 +13,16 @@ export default function App() {
   useEffect(() => {
     const request = (search.current ??= searchPeople(QUERY))
     request.then(
-      ({ results }) => { console.log(results); setPeople(results); setLoading(false) },
-      (error) => { console.error(error); setError(true); setLoading(false) },
+      ({ results }) => {
+        console.log(results) // se hvad vi får tilbage
+        setPeople(results)
+        setLoading(false)
+      },
+      (error) => {
+        console.error(error)
+        setError(true)
+        setLoading(false)
+      },
     )
   }, [])
 
