@@ -7,6 +7,7 @@ const QUERY = 'spielberg'
 export default function App() {
   const search = useRef<ReturnType<typeof searchPeople> | null>(null) // gemmer kaldet
   const [people, setPeople] = useState<PersonSearchResult[]>([])
+  const [index, setIndex] = useState(0) // nummeret på personen
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(false)
 
@@ -32,7 +33,8 @@ export default function App() {
 
   return (
     <main>
-      <Person person={people[0]} />
+      <Person person={people[index]} />
+      <button disabled={index === people.length - 1} onClick={() => setIndex(index + 1)}>Next</button>
     </main>
   )
 }
