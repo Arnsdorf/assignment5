@@ -32,7 +32,7 @@ export default function App() {
 
   return (
     <main>
-      {people.map((person) => <Person key={person.id} person={person} />)}
+      <Person person={people[0]} />
     </main>
   )
 }
