@@ -1,7 +1,7 @@
 ﻿import { useEffect, useRef } from 'react'
 import { searchPeople } from './api/people'
 
-const QUERY = 'Kubrick'//Lav til et input felt
+const QUERY = 'spielberg'
 
 export default function App() {
   const search = useRef<ReturnType<typeof searchPeople> | null>(null)
