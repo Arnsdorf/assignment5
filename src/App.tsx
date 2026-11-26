@@ -30,5 +30,9 @@ export default function App() {
   if (error) return <p>Could not load people.</p>
   if (people.length === 0) return <p>No people found.</p>
 
-  return <main>{people.map((person) => <Person key={person.id} person={person} />)}</main>
+  return (
+    <main>
+      {people.map((person) => <Person key={person.id} person={person} />)}
+    </main>
+  )
 }
