@@ -2,7 +2,7 @@
 import { searchPeople, type PersonSearchResult } from './api/people'
 import Person from './Person'
 
-const QUERY = 'spielberg'
+const QUERY = 'spielberg' // den søger vi på
 
 export default function App() {
   const search = useRef<ReturnType<typeof searchPeople> | null>(null) // gemmer kaldet
@@ -34,8 +34,12 @@ export default function App() {
   return (
     <main>
       <Person person={people[index]} />
-      <button disabled={index === 0} onClick={() => setIndex(index - 1)}>Previous</button>
-      <button disabled={index === people.length - 1} onClick={() => setIndex(index + 1)}>Next</button>
+      <button disabled={index === 0} onClick={() => setIndex(index - 1)}>
+        Previous
+      </button>
+      <button disabled={index === people.length - 1} onClick={() => setIndex(index + 1)}>
+        Next
+      </button>
     </main>
   )
 }
