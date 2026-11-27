@@ -1,6 +1,7 @@
 ﻿import { useEffect, useRef, useState } from 'react'
 import { searchPeople, type PersonSearchResult } from './api/people'
 import Person from './Person'
+import ImagesFor from './ImagesFor'
 
 const QUERY = 'spielberg' // den søger vi på
 
@@ -34,6 +35,7 @@ export default function App() {
   return (
     <main>
       <Person person={people[index]} />
+      <ImagesFor key={people[index].id} id={people[index].id} />
       <button disabled={index === 0} onClick={() => setIndex(index - 1)}>
         Previous
       </button>

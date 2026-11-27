@@ -13,9 +13,37 @@ body {
   margin: 40px auto;
   padding: 24px;
   text-align: center;
-  background: #ffe4ef;
+  background: #fff0f6;
   border: 1px solid #efb5cc;
   border-radius: 12px;
+}
+
+h2, h3 {
+  color: #bd527c;
+}
+
+.movie {
+  margin: 12px 0;
+  padding: 12px;
+  background: #ffe4ef;
+  border: 1px solid #efb5cc;
+  border-radius: 6px;
+}
+
+.movie:nth-of-type(even) {
+  background: #ffd6e7;
+}
+
+.images {
+  margin: 12px 0;
+  padding: 12px;
+  background: #ffeaf2;
+  border: 1px solid #efb5cc;
+  border-radius: 6px;
+}
+
+.images img {
+  margin: 4px;
 }
 
 button {
